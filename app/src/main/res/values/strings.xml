@@ -3,6 +3,7 @@
     <string name="logo">Logo</string>
     <string name="title_activity_sign_up">Leanback SignUpActivity</string>
     <string name="title_activity_sign_in">Leanback SignInActivity</string>
+    <string name="title_activity_reseta_senha">Leanback ActivityResetPassword</string>
     <string name="browse_title">Videos by Your Company</string>
     <string name="related_movies">Related Videos</string>
     <string name="grid_view">Grid View</string>

@@ -14,20 +14,28 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySignInBinding.inflate(layoutInflater)
-        setContentView(binding.root) // ✅ OBRIGATÓRIO
+        setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Ir para tela de cadastro
+        // --- INÍCIO DA CORREÇÃO ---
+        // MOVA O LISTENER DE RESETAR SENHA PARA CÁ
+
+        // Listener para ir para a tela de resetar senha
+        binding.textView3.setOnClickListener {
+            val intent = Intent(this, ResetPasswordActivity::class.java)
+            startActivity(intent)
+        }
+        // --- FIM DA CORREÇÃO ---
+
+        // Listener para ir para a tela de cadastro
         binding.textView.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
 
-        // Botão de login
+        // Listener para o botão de login
         binding.button.setOnClickListener {
-
             val email = binding.emailEt.text.toString().trim()
             val pass = binding.passET.text.toString().trim()
 
@@ -44,11 +52,9 @@ class SignInActivity : AppCompatActivity() {
                 .signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-
-                        // ✅ Login OK → ir para tela principal
+                        // Login OK → ir para tela principal
                         startActivity(Intent(this, MainActivity::class.java))
-                        finish()
-
+                        finish() // Fecha a tela de login para o usuário não voltar para ela
                     } else {
                         Toast.makeText(
                             this,
@@ -56,6 +62,7 @@ class SignInActivity : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                     }
+                    // O listener de resetar senha foi removido daqui.
                 }
         }
     }
