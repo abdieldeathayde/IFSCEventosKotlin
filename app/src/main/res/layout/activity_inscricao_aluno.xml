@@ -100,7 +100,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/purple_700"
-        android:text="Entrar"
+        android:text="Salvar"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
