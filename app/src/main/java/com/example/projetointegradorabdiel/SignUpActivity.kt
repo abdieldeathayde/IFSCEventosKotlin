@@ -22,35 +22,37 @@ class SignUpActivity : AppCompatActivity() {
 
         // Voltar para login
         binding.textView.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
-
+            startActivity(Intent(this, SignInActivity::class.java))
             finish()
-
         }
 
-        // Botão de cadastro
+        // 👉 Update Your Information → Inscrição do Aluno
+        binding.textView4.setOnClickListener {
+            startActivity(Intent(this, InscricaoAlunoActivity::class.java))
+        }
+
+        // Botão Sign Up
         binding.button.setOnClickListener {
 
             val email = binding.emailEt.text.toString().trim()
-            val pass = binding.passET.text.toString().trim()
-            val confirmPass = binding.confirmPassEt.text.toString().trim()
+            val password = binding.passET.text.toString().trim()
+            val confirmPassword = binding.confirmPassEt.text.toString().trim()
 
-            if (email.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (pass != confirmPass) {
+            if (password != confirmPassword) {
                 Toast.makeText(this, "As senhas não conferem", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             firebaseAuth
-                .createUserWithEmailAndPassword(email, pass)
+                .createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        // Cadastro OK → ir para login ou home
+                        Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, SignInActivity::class.java))
                         finish()
                     } else {

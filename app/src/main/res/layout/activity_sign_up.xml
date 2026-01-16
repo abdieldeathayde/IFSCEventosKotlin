@@ -7,6 +7,18 @@
     tools:context=".SignUpActivity">
 
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Your Information Student"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.844" tools:ignore="HardcodedText"/>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
         style="@style/Theme.ProjetoIntegradorAbdiel"
@@ -96,11 +108,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout"
-        tools:ignore="HardcodedText,MissingClass,VisualLintButtonSize,TextContrastCheck" />
-
+        app:layout_constraintVertical_bias="0.227"
+        tools:ignore="HardcodedText,MissingClass,VisualLintButtonSize,TextContrastCheck"/>
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
