@@ -1,23 +1,25 @@
 package com.example.projetointegradorabdiel
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 import com.example.projetointegradorabdiel.R.layout.activity_main
-import kotlin.properties.Delegates
 
 class MainActivity : ComponentActivity() {
-    // Renamed this property
-    private var contentViewRes by Delegates.notNull<Int>()
 
-    @SuppressLint("SetTextI18n")
+    private lateinit var btnTodo: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Assign the layout to your renamed variable
-        contentViewRes = activity_main
+        setContentView(activity_main)
 
-        // Use the activity's original setContentView method
-        setContentView(contentViewRes)
+        btnTodo = findViewById(R.id.imageButton4)
+
+        btnTodo.setOnClickListener {
+            val intent = Intent(this, TodoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
