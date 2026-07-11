@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
     id("org.jetbrains.kotlin.plugin.compose")
 }
@@ -10,12 +9,13 @@ plugins {
 android {
 
     namespace = "com.example.projetointegradorabdiel"
-    compileSdk = 36
+    compileSdk = 37
+//        (as String)
 
     defaultConfig {
         applicationId = "com.example.projetointegradorabdiel"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
