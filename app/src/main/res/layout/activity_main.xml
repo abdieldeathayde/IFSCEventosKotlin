@@ -115,59 +115,46 @@
         app:layout_constraintStart_toEndOf="@id/textView17"/>
 
     <!-- Botão -->
-
-    <!-- Menu inferior -->
     <Button
         android:id="@+id/button5"
         android:layout_width="180dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/quero_me_inscrever"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:layout_marginTop="24dp"
+        android:text="Quero me Inscrever"
+        app:layout_constraintTop_toBottomOf="@id/textView17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView17" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Menu inferior -->
     <LinearLayout
         android:id="@+id/menuInferior"
         android:layout_width="0dp"
-        android:layout_height="72dp"
-        android:background="@android:color/white"
-        android:elevation="8dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:orientation="horizontal"
-        android:weightSum="4"
-        android:paddingVertical="6dp"
+        android:gravity="center"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Home -->
-        <LinearLayout
-            android:layout_width="0dp"
+        <!-- Tela Inicial -->
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Tela Inicial"
+            android:src="@drawable/usersolid" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="TELA INICIAL"
+            android:textSize="10sp" />
 
-            <ImageButton
-                android:id="@+id/btnHome"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:padding="6dp"
-                android:src="@drawable/conta"
-                app:tint="@color/ifsc_green"
-                android:contentDescription="Tela Inicial"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Início"
-                android:textSize="12sp"/>
-        </LinearLayout>
-
-        <!-- Config -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -177,22 +164,21 @@
 
             <ImageButton
                 android:id="@+id/btnConfig"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:padding="4dp"
-                android:src="@drawable/configuracoes"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
                 android:contentDescription="Configurações"
-                app:tint="@color/ifsc_green"/>
+                android:src="@drawable/vector" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Conta"
-                android:textSize="12sp"/>
+                android:gravity="center"
+                android:text="CONFIGURAÇÕES&#10;DA CONTA"
+                android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Ajuda -->
+        <!-- Configurações -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -202,45 +188,27 @@
 
             <ImageButton
                 android:id="@+id/btnAjuda"
-                android:layout_width="103dp"
-                android:layout_height="37dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
                 android:contentDescription="Ajuda"
-                android:padding="4dp"
-                android:src="@drawable/outline_chat_info_24"
-                app:tint="@color/ifsc_green"/>
+                android:src="@drawable/circleinfosolid" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ajuda"
-                android:textSize="12sp"/>
+                android:gravity="center"
+                android:text="Precisa de&#10;Ajuda?"
+                android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Tarefas -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+        <!-- Ajuda -->
 
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:padding="4dp"
-                android:src="@drawable/jornal"
-                android:contentDescription="Minhas tarefas"
-                app:tint="@color/ifsc_green"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tarefas"
-                android:textSize="12sp"/>
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="142dp"
+            android:layout_height="61dp"
+            android:src="@drawable/ebook21"  />
 
     </LinearLayout>
 

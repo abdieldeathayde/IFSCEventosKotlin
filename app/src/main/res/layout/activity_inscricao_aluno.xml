@@ -111,7 +111,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/ifsc_green"
+        android:backgroundTint="@color/purple_700"
         android:text="Salvar"
         android:textColor="@android:color/white"
         android:textStyle="bold"

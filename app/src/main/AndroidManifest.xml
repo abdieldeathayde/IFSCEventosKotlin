@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.projetointegradorabdiel">
 
     <uses-feature
         android:name="android.software.leanback"
@@ -8,10 +10,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoIntegradorAbdiel">
+
 
         <activity
             android:name=".SignInActivity"
@@ -19,36 +22,26 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
 
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
 
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
+        <activity android:name=".SignUpActivity" />
 
-        <activity
-            android:name=".ResetPasswordActivity"
-            android:exported="false" />
+        <activity android:name=".ResetPasswordActivity" />
 
-        <activity
-            android:name=".InscricaoAlunoActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".InscricaoAlunoActivity" />
 
-        <activity
-            android:name=".InscricaoProfessorOuTecnico"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".InscricaoProfessorOuTecnicoActivity" />
 
-        <activity
-            android:name=".TodoActivity"
-            android:exported="false" />
+        <activity android:name=".TodoActivity" />
+
+        <activity android:name=".MainActivity" />
+
 
         <activity
             android:name=".AdminDashboardActivity"

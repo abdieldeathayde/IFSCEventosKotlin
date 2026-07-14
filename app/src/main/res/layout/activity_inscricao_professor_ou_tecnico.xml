@@ -131,8 +131,16 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button4"
         android:layout_width="0dp"
+<<<<<<< HEAD
         android:layout_height="50dp"
         android:layout_margin="16dp"
+=======
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/purple_700"
+>>>>>>> parent of 4446dcd (atualizando projeto)
         android:text="Salvar"
         android:textColor="@android:color/white"
         android:textStyle="bold"
