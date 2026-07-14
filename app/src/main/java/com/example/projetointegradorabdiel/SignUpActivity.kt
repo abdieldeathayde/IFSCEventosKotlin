@@ -6,15 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projetointegradorabdiel.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
-import kotlin.jvm.java
-
-private lateinit var onClickListener: () -> Unit
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
-    private lateinit var firebaseAuth: FirebaseAuth
-
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,56 +20,73 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
-        // Voltar para login
-        binding.textView.setOnClickListener {
-            startActivity(Intent(this, SignInActivity::class.java))
-            finish()
-        }
+        binding.buttonCadastrar.setOnClickListener {
 
-        // 👉 Update Your Information → Inscrição do Aluno
-        binding.textView4.setOnClickListener {
-            startActivity(Intent(this, InscricaoAlunoActivity::class.java))
-        }
+            val nome = binding.nomeEt.text.toString().trim()
+            val email = binding.emailEt.text.toString().trim()
+            val senha = binding.passET.text.toString().trim()
+            val confirmarSenha = binding.confirmPassEt.text.toString().trim()
 
-        binding.textView5.setOnClickListener {
-            startActivity(Intent(this, InscricaoProfessorOuTecnico::class.java))
-        }
+            if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()) {
+                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
+            if (senha != confirmarSenha) {
+                Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-            // Botão Sign Up
-            binding.button.setOnClickListener {
+            auth.createUserWithEmailAndPassword(email, senha)
+                .addOnSuccessListener {
 
-                val email = binding.emailEt.text.toString().trim()
-                val password = binding.passET.text.toString().trim()
-                val confirmPassword = binding.confirmPassEt.text.toString().trim()
+                    val uid = auth.currentUser!!.uid
 
-                if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                    Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
-                }
+                    val usuario = hashMapOf(
+                        "uid" to uid,
+                        "nome" to nome,
+                        "email" to email,
+                        "tipo" to "ALUNO"
+                    )
 
-                if (password != confirmPassword) {
-                    Toast.makeText(this, "As senhas não conferem", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
-                }
+                    firestore.collection("usuarios")
+                        .document(uid)
+                        .set(usuario)
+                        .addOnSuccessListener {
 
-                firebaseAuth
-                    .createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, SignInActivity::class.java))
-                            finish()
-                        } else {
                             Toast.makeText(
                                 this,
-                                task.exception?.message ?: "Erro ao criar conta",
+                                "Cadastro realizado com sucesso!",
                                 Toast.LENGTH_SHORT
                             ).show()
+
+                            startActivity(
+                                Intent(this, SignInActivity::class.java)
+                            )
+
+                            finish()
                         }
-                    }
-            }
+                        .addOnFailureListener { e ->
+
+                            Toast.makeText(
+                                this,
+                                e.message,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                }
+                .addOnFailureListener { e ->
+
+                    Toast.makeText(
+                        this,
+                        e.message,
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
         }
+    }
 }

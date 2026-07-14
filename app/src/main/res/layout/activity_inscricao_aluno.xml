@@ -61,18 +61,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/editTextText7"/>
+
     <EditText
         android:id="@+id/editTextText9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:hint="Telefone"
         android:inputType="phone"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/editTextText8"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextText8" />
+
     <EditText
         android:id="@+id/editTextText6"
         android:layout_width="0dp"
@@ -92,6 +94,16 @@
     <!-- TELEFONE -->
 
     <!-- BOTÃO -->
+
+    <EditText
+        android:id="@+id/editTextSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="389dp" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button3"
         android:layout_width="0dp"

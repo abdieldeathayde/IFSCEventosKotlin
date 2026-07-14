@@ -50,6 +50,34 @@
             android:name=".TodoActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".NovoCursoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".NovaNoticiaActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetailsActivity2"
+            android:exported="false" />
+
+        <activity
+            android:name=".PlaybackActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BrowseErrorActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

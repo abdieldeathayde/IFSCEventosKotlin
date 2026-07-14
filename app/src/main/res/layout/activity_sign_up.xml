@@ -6,45 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ifsc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nomeLayout"
+        style="@style/Theme.ProjetoIntegradorAbdiel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Your Information Teacher"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:boxStrokeColor="@color/purple_700"
+        app:hintTextColor="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.844" tools:ignore="HardcodedText"/>
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Your Information Student"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.475" tools:ignore="HardcodedText"/>
+        app:layout_constraintTop_toBottomOf="@id/imageView3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nomeEt"
+            style="@style/Theme.ProjetoIntegradorAbdiel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your Name"
+            android:inputType="textPersonName"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
         style="@style/Theme.ProjetoIntegradorAbdiel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="16dp"
         app:boxStrokeColor="@color/purple_700"
         app:hintTextColor="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingClass">
+        app:layout_constraintTop_toBottomOf="@id/nomeLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEt"
@@ -53,7 +60,7 @@
             android:layout_height="wrap_content"
             android:hint="Type your Email"
             android:inputType="textEmailAddress"
-            tools:ignore="HardcodedText,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            tools:ignore="HardcodedText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -62,15 +69,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:boxStrokeColor="@color/purple_700"
         app:hintTextColor="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailLayout"
-        app:passwordToggleEnabled="true"
-        tools:ignore="MissingClass">
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passET"
@@ -79,7 +84,7 @@
             android:layout_height="wrap_content"
             android:hint="Type Your Password"
             android:inputType="textPassword"
-            tools:ignore="HardcodedText,MissingClass,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            tools:ignore="HardcodedText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -88,16 +93,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
+        android:layout_marginTop="16dp"
         app:boxStrokeColor="@color/purple_700"
         app:hintTextColor="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordLayout"
-        app:passwordToggleEnabled="true"
-        tools:ignore="MissingClass">
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirmPassEt"
@@ -106,50 +108,34 @@
             android:layout_height="wrap_content"
             android:hint="Retype Your Password"
             android:inputType="textPassword"
-            tools:ignore="HardcodedText,MissingClass,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+            tools:ignore="HardcodedText" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
         android:background="@color/purple_700"
         android:text="Sign Up"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout"
-        app:layout_constraintVertical_bias="0.227"
-        tools:ignore="HardcodedText,MissingClass,VisualLintButtonSize,TextContrastCheck"/>
-
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already Registered , Sign In !"
+        android:layout_marginTop="16dp"
+        android:text="Already Registered, Sign In!"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.174" tools:ignore="HardcodedText"/>
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/ifsc"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        tools:ignore="ContentDescription,UnknownId,VisualLintBounds"
-        tools:src="@drawable/ifsc" />
-
+        app:layout_constraintTop_toBottomOf="@+id/buttonCadastrar"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
