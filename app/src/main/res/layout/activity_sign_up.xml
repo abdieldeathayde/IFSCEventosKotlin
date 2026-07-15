@@ -117,14 +117,15 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
-        android:background="@color/purple_700"
+        android:background="@color/ifsc_green"
         android:text="Sign Up"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordLayout"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        app:tint="@color/ifsc_green"/>
 
     <TextView
         android:id="@+id/textView"

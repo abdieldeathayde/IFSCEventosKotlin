@@ -128,7 +128,8 @@
         android:text="QUERO ME INSCREVER"
         app:layout_constraintTop_toBottomOf="@id/textInscricao"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <!-- Barra inferior -->
     <LinearLayout
