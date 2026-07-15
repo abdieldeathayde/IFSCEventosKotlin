@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,206 +10,174 @@
 
     <!-- Logo IFSC -->
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="207dp"
-        android:layout_height="131dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/imageViewLogo"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/ifsc"
+        android:contentDescription="Logo IFSC"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Imagem notícia -->
+    <!-- Ícone -->
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
+        android:id="@+id/imageViewNoticia"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitCenter"
         android:src="@drawable/noticia"
-        app:layout_constraintTop_toBottomOf="@id/imageView6"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:contentDescription="Notícia"
+        app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Título -->
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="NOTÍCIAS RECENTES"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/imageView5"
-        app:layout_constraintTop_toTopOf="@id/imageView5"
-        app:layout_constraintBottom_toBottomOf="@id/imageView5"/>
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/imageViewNoticia"
+        app:layout_constraintTop_toTopOf="@id/imageViewNoticia"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewNoticia" />
 
     <!-- Linha -->
     <View
-        android:id="@+id/view"
+        android:id="@+id/divisor"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="20dp"
-        android:background="#D3D3D3"
-        app:layout_constraintTop_toBottomOf="@id/imageView5"
+        android:background="#DDDDDD"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewNoticia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Curso -->
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textCurso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Curso ofertado:"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="@string/curso_ofertado"
-        app:layout_constraintTop_toBottomOf="@id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/textView14"
-        app:layout_constraintHorizontal_bias="0.7"/>
+        app:layout_constraintTop_toBottomOf="@id/divisor"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textNomeCurso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FIC INGLÊS"
+        android:text="FIC Inglês"
         android:layout_marginStart="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/textView13"
-        app:layout_constraintStart_toEndOf="@id/textView13"/>
+        app:layout_constraintBaseline_toBaselineOf="@id/textCurso"
+        app:layout_constraintStart_toEndOf="@id/textCurso"/>
 
     <!-- Área -->
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Área:"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textView13"
-        app:layout_constraintStart_toStartOf="@id/textView13"/>
+        app:layout_constraintTop_toBottomOf="@id/textCurso"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textAreaValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Qualificação Profissional"
         android:layout_marginStart="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/textView15"
-        app:layout_constraintStart_toEndOf="@id/textView15"/>
+        app:layout_constraintBaseline_toBaselineOf="@id/textArea"
+        app:layout_constraintStart_toEndOf="@id/textArea"/>
 
-    <!-- Inscrições -->
+    <!-- Data -->
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textInscricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Inscrições até:"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textView15"
-        app:layout_constraintStart_toStartOf="@id/textView15"/>
+        app:layout_constraintTop_toBottomOf="@id/textArea"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="08/03/2024"
         android:layout_marginStart="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/textView17"
-        app:layout_constraintStart_toEndOf="@id/textView17"/>
+        app:layout_constraintBaseline_toBaselineOf="@id/textInscricao"
+        app:layout_constraintStart_toEndOf="@id/textInscricao"/>
 
     <!-- Botão -->
     <Button
-        android:id="@+id/button5"
-        android:layout_width="180dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:text="Quero me Inscrever"
-        app:layout_constraintTop_toBottomOf="@id/textView17"
+        android:id="@+id/buttonInscrever"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="QUERO ME INSCREVER"
+        app:layout_constraintTop_toBottomOf="@id/textInscricao"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Menu inferior -->
+    <!-- Barra inferior -->
     <LinearLayout
         android:id="@+id/menuInferior"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:weightSum="3"
+        android:weightSum="4"
+        android:background="#EEEEEE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Tela Inicial -->
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/tela_inicial"
+            android:background="@android:color/transparent"
+            android:contentDescription="Início"/>
 
         <ImageButton
-            android:id="@+id/btnHome"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:id="@+id/imageButton2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/outline_contact_support_24"
             android:background="@android:color/transparent"
-            android:contentDescription="Tela Inicial"
-            android:src="@drawable/usersolid" />
+            android:contentDescription="Contato"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="TELA INICIAL"
-            android:textSize="10sp" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btnConfig"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="Configurações"
-                android:src="@drawable/vector" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="CONFIGURAÇÕES&#10;DA CONTA"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-        <!-- Configurações -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btnAjuda"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="Ajuda"
-                android:src="@drawable/circleinfosolid" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Precisa de&#10;Ajuda?"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-        <!-- Ajuda -->
+            android:src="@drawable/ajuda"
+            android:background="@android:color/transparent"
+            android:contentDescription="Ajuda"/>
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="142dp"
-            android:layout_height="61dp"
-            android:src="@drawable/ebook21"  />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/jornal"
+            android:background="@android:color/transparent"
+            android:contentDescription="Notícias"/>
 
     </LinearLayout>
 

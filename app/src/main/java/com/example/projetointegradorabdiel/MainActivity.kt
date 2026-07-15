@@ -3,23 +3,20 @@ package com.example.projetointegradorabdiel
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
-import androidx.activity.ComponentActivity
-import com.example.projetointegradorabdiel.R.layout.activity_main
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var btnTodo: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(activity_main)
+        setContentView(R.layout.activity_main)
 
         btnTodo = findViewById(R.id.imageButton4)
 
         btnTodo.setOnClickListener {
-            val intent = Intent(this, TodoActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, TodoActivity::class.java))
         }
     }
 }

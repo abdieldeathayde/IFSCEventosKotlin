@@ -2,6 +2,8 @@ package com.example.projetointegradorabdiel // 🔴 ajuste para o seu pacote rea
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
+import android.widget.Toast
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,9 @@ class InscricaoProfessorOuTecnico : AppCompatActivity() {
     private lateinit var etTelefone: EditText
     private lateinit var imageLogo: ImageView
 
+    private lateinit var etEmail: EditText
+    private lateinit var etSenha: EditText
+    private lateinit var etConfirmarSenha: EditText
     private lateinit var radioGroupTipo: RadioGroup
     private lateinit var radioProfessor: RadioButton
     private lateinit var radioTI: RadioButton
@@ -29,10 +34,11 @@ class InscricaoProfessorOuTecnico : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inscricao_professor_ou_tecnico)
 
-<<<<<<< HEAD
+
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
@@ -54,35 +60,15 @@ class InscricaoProfessorOuTecnico : AppCompatActivity() {
         radioProfessor = findViewById(R.id.radioProfessor)
         radioTI = findViewById(R.id.radioTI)
 
-=======
         // 🔗 Ligando os componentes do XML
->>>>>>> parent of 4446dcd (atualizando projeto)
         btnSalvar = findViewById(R.id.button4)
         etCargo = findViewById(R.id.editTextText2)
         etTelefone = findViewById(R.id.editTextText4)
         imageLogo = findViewById(R.id.imageView4)
 
-        // 🟣 Ação do botão Salvar
-        btnSalvar.setOnClickListener {
-            val cargo = etCargo.text.toString().trim()
-            val telefone = etTelefone.text.toString().trim()
 
-            if (cargo.isEmpty()) {
-                etCargo.error = "Informe o cargo"
-                return@setOnClickListener
-            }
-
-            if (telefone.isEmpty()) {
-                etTelefone.error = "Informe o telefone"
-                return@setOnClickListener
-            }
-
-            // Aqui você pode salvar no Firebase, banco local ou enviar para API
-            // Exemplo:
-            // salvarDadosProfessorOuTecnico(cargo, telefone)
-        }
     }
-<<<<<<< HEAD
+
 
     private fun cadastrarUsuario() {
 
@@ -219,6 +205,6 @@ class InscricaoProfessorOuTecnico : AppCompatActivity() {
         return true
     }
 }
-=======
-}
->>>>>>> parent of 4446dcd (atualizando projeto)
+
+
+

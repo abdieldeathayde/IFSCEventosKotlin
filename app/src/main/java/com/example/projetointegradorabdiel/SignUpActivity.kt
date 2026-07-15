@@ -23,6 +23,13 @@ class SignUpActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
+        // Ao clicar em "Already Registered? Sign In!"
+        binding.textView.setOnClickListener {
+            startActivity(Intent(this, SignInActivity::class.java))
+            finish()
+        }
+
+        // Botão de cadastro
         binding.buttonCadastrar.setOnClickListener {
 
             val nome = binding.nomeEt.text.toString().trim()
@@ -63,27 +70,21 @@ class SignUpActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            startActivity(
-                                Intent(this, SignInActivity::class.java)
-                            )
-
+                            startActivity(Intent(this, SignInActivity::class.java))
                             finish()
                         }
                         .addOnFailureListener { e ->
-
                             Toast.makeText(
                                 this,
-                                e.message,
+                                e.message ?: "Erro ao salvar os dados do usuário.",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
-
                 }
                 .addOnFailureListener { e ->
-
                     Toast.makeText(
                         this,
-                        e.message,
+                        e.message ?: "Erro ao criar a conta.",
                         Toast.LENGTH_LONG
                     ).show()
                 }
