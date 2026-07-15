@@ -17,14 +17,18 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySignInBinding.inflate(layoutInflater)
-        val contentView = setContentView(binding.root)
-        setContentView(binding.root) // ✅ OBRIGATÓRIO
+        setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
 
         // Ir para tela de cadastro
         binding.textView.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
+        }
+
+        // Ir para tela de resetar senha
+        binding.textView3.setOnClickListener {
+            startActivity(Intent(this, ResetPasswordActivity::class.java))
         }
 
         // Botão de login
